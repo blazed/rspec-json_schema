@@ -25,7 +25,7 @@ bundler_args: "--standalone --binstubs --without documentation"
 
 script:
   - gem install bundler
-  - "script/test_all"
+  - "scripts/test_all"
 
 notifications:
   email: false
