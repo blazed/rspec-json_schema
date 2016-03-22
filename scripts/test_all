@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e -x
+
+echo "Running rspec examples"
+bin/rspec spec --format progress --profile

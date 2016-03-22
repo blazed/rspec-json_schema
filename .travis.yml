@@ -24,6 +24,7 @@ sudo: false
 bundler_args: "--standalone --binstubs --without documentation"
 
 script:
+  - gem install bundler
   - "script/test_all"
 
 notifications:
