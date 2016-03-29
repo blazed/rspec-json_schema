@@ -11,11 +11,11 @@ RSpec::Matchers.define :match_schema do |expected|
       if sub_errors
         e.sub_errors[1].each do |sub_e|
           str += "\n";
-          str += "Description #{sub_e.schema.
-            &(:data).
-            &(:[], "properties").
-            &(:[], "type").
-            &(:[], "id")}\n"
+          str += "Description #{sub_e.schema&.
+            (:data)&.
+            (:[], "properties")&.
+            (:[], "type")&.
+            (:[], "id")}\n"
           str += "\t\t Error in #{sub_e.path.join('/')} #{sub_e.type}: #{sub_e.message}"
         end
       end
