@@ -17,4 +17,4 @@ RSpec.configure do |rspec|
   rspec.backtrace_exclusion_patterns << %r(/lib/rspec/json_schema)
 end
 
-RSpec::SharedContext.send(:include, Rspec::JsonSchema)
+RSpec::SharedContext.send(:include, RSpec::JsonSchema)
