@@ -1,7 +1,3 @@
-require 'rspec/core'
-require 'active_support'
-require 'active_support/core_ext/object/try'
-
 RSpec::Matchers.define :match_schema do |expected|
   match do |actual|
     parse_and_validate(expected, actual)[0]

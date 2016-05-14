@@ -1,6 +1,10 @@
+require 'json_schema'
+require 'rspec/core'
+require 'active_support'
+require 'active_support/core_ext/object/try'
+require 'rspec/core'
 require 'rspec/json_schema/match_schema'
 require 'rspec/json_schema/version'
-require 'rspec/core'
 
 module RSpec
   module JsonSchema
