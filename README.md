@@ -25,6 +25,9 @@ Add the following to your `rails_helper.rb` or `spec_helper.rb`.
 require 'rspec/json_schema'
 ```
 
+Add your schemas under the `rspec/shemas` dir.
+That's where `rspec-json_schemas` looks for.
+
 Then in your test scenario you can use the `it_follows_json_schema(json-schema_path)` method:
 
 ```ruby

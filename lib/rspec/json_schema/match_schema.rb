@@ -6,7 +6,7 @@ RSpec::Matchers.define :match_schema do |expected|
   failure_message do |actual|
     parse_and_validate(expected, actual)[1].map{|e|
       str = "Error in #{e.path.join('/')} #{e.type}: #{e.message}"
-      if sub_errors
+      if e.sub_errors
         e.sub_errors[1].each do |sub_e|
           str += "\n";
           str += "Description #{sub_e.schema.
