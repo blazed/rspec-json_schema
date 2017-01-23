@@ -6,7 +6,7 @@ require 'rspec/json_schema/version'
 Gem::Specification.new do |spec|
   spec.name          = "rspec-json_schema"
   spec.version       = Rspec::JsonSchema::VERSION
-  spec.authors       = ["Pierre Boberb", "Filippos Vasilakis"]
+  spec.authors       = ["Pierre Boberg", "Filippos Vasilakis"]
   spec.email         = ["blazed@darkstar.se", "vasilakisfil@gmail.com"]
 
   spec.summary       = %q{Write a short summary, because Rubygems requires one.}
