@@ -1,8 +1,6 @@
 # Rspec::JsonSchema
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rspec/json_schema`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A simple gem that allows you to test (json) strings against a json schema.
+It is supposed to be used along with RSpec for testing.
 
 ## Installation
 
@@ -21,8 +19,33 @@ Or install it yourself as:
     $ gem install rspec-json_schema
 
 ## Usage
+Add the following to your `rails_helper.rb` or `spec_helper.rb`.
 
-TODO: Write usage instructions here
+```ruby
+require 'rspec/json_schema'
+```
+
+Add your schemas under the `rspec/shemas` dir.
+That's where `rspec-json_schemas` looks for.
+
+Then in your test scenario you can use the `it_follows_json_schema(json-schema_path)` method:
+
+```ruby
+describe 'Catches API: :index', type: :api do
+  before do
+    5.times{ FactoryGirl.create(:video) }
+
+    get api_v1_catches_path, format: :json
+  end
+
+  it_follows_json_schema('videos/index')
+end
+```
+where `videos/index` regers to the `spec/schemas/videos/index.json` file.
+
+# ToDo
+- [ ] allow to setup the schemas default directory
+- [ ] more testing
 
 ## Development
 
@@ -32,7 +55,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rspec-json_schema.
+Bug reports and pull requests are welcome on GitHub at https://github.com/blazed/rspec-json_schema.
 
 
 ## License
